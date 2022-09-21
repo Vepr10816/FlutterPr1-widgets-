@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:pr1/screen.dart';
+import 'package:pr1/Meditate.dart';
+import 'package:pr1/Medinow.dart';
+import 'package:pr1/MindDeepRelax.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Pr1());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Pr1 extends StatelessWidget {
+  const Pr1({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Screen(),
+      home: Meditate(), //Medinow(), //MindDeepRelax(),
     );
     
   }
