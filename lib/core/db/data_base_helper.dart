@@ -6,6 +6,7 @@ import 'package:pr2/command/data_base_request.dart';
 import 'package:pr2/data/model/role.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class DataBaseHelper {
   static final DataBaseHelper instance = DataBaseHelper._instance();
@@ -23,6 +24,17 @@ class DataBaseHelper {
     _pathDB = join(_appDocumentDirectory.path, 'boockstore.db');
 
     if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
+      sqfliteFfiInit();
+      var database = await databaseFactoryFfi.openDatabase(_pathDB,
+          options: OpenDatabaseOptions(
+            version: _version,
+            onCreate: (db, version) async {
+              await onCreateTable(db);
+            },
+            onUpgrade: (db, oldVersion, newVersion) async {
+              await onUpdateTable(db);
+            },
+          ));
     } else {
       database = await openDatabase(
         _pathDB,
@@ -71,6 +83,7 @@ class DataBaseHelper {
   Future<void> onDropDataBase() async {
     database.close();
     if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
+      databaseFactory.deleteDatabase(_pathDB);
     } else {
       deleteDatabase(_pathDB);
     }
