@@ -15,7 +15,6 @@ class Material extends MaterialEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       'materialType': materialType,
     };
   }

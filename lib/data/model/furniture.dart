@@ -27,7 +27,6 @@ class Furniture extends FurnitureEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       ' dateDeliver': dateDeliver,
       ' purchasePrice': purchasePrice,
       ' id_characteristics': id_characteristics,

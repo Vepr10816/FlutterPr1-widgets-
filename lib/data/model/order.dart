@@ -27,7 +27,6 @@ class Order extends OrderEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       ' orderNumber': orderNumber,
       ' orderDate': orderDate,
       ' Summary': Summary,

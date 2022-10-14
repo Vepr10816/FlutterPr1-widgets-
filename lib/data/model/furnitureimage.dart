@@ -18,7 +18,6 @@ class FurnitureImage extends FurnitureImageEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       ' imageSource': imageSource,
       ' id_furniture': id_furniture,
     };

@@ -15,7 +15,6 @@ class Color extends ColorEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       'colorName': colorName,
     };
   }

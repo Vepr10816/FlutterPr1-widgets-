@@ -21,7 +21,6 @@ class SizeFurniture extends SizeFurnitureEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       ' furnitureLength': furnitureLength,
       ' furnitureWidth': furnitureWidth,
       ' furnitureHeight': furnitureHeight,

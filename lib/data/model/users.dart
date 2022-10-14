@@ -24,7 +24,6 @@ class Users extends UsersEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       ' login': login,
       ' password': password,
       ' id_role': id_role,
