@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pr2/core/db/data_base_helper.dart';
 
-void main() {
+void main() async{
+  await DataBaseHelper.instance.init();
   runApp(const App());
 }
 
