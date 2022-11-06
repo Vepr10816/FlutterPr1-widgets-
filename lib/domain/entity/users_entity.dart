@@ -1,9 +1,10 @@
+import 'package:pr2/domain/entity/role_entity.dart';
+
 class UsersEntity{
   late int id;
   final String login;
   final String password;
-  final int id_role;
-  final int id_client;
+  final /*RoleEnum*/int id_role;
 
-  UsersEntity({required this.id,required this.login, required this.password, required this.id_role, required this.id_client});
+  UsersEntity({this.id = 0,required this.login, this.password = '', required this.id_role});
 }

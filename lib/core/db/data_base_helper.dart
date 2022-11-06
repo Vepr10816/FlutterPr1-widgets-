@@ -21,11 +21,11 @@ class DataBaseHelper {
   Future<void> init() async {
     _appDocumentDirectory =
         await path_provider.getApplicationDocumentsDirectory();
-    _pathDB = join(_appDocumentDirectory.path, 'furnituretore.db');
+    _pathDB = join(_appDocumentDirectory!.path, 'furnituretore.db');
 
     if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
       sqfliteFfiInit();
-      var database = await databaseFactoryFfi.openDatabase(_pathDB,
+      database = await databaseFactoryFfi.openDatabase(_pathDB,
           options: OpenDatabaseOptions(
             version: _version,
             onCreate: (db, version) async {

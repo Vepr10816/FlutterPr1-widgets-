@@ -44,6 +44,8 @@ dependencies:
   crypto: ^3.0.2
   #Работа с файлами
   path_provider: ^2.0.11
+  #Функциональное программирование
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
